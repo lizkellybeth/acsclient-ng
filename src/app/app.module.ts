@@ -9,13 +9,15 @@ import { AcsStatusComponent } from './components/acs-status/acs-status.component
 import { AcsStatusService } from './services/acs-status.service';
 import { TmcdbComponent } from './components/tmcdb/tmcdb.component';
 import { SubsystemsComponent } from './components/subsystems/subsystems.component';
+import { TasksComponent } from './components/tasks/tasks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AcsStatusComponent,
     TmcdbComponent,
-    SubsystemsComponent
+    SubsystemsComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,
