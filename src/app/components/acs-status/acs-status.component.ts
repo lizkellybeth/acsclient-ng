@@ -15,15 +15,15 @@ export class AcsStatusComponent implements OnInit {
   constructor(public service: AcsStatusService) { }
 
   ngOnInit(): void {
-    //this.fetchStatus();
-    this.fetchMockStatus();
+    this.fetchStatus();
+    //this.fetchMockStatus();
   }
 
   fetchStatus() {
     this.service.fetchAcsStatus()
       .then(res => {
-        console.log("fetched result[]: " + <string>res["info"] + "]");
-        this.status = (<string>res["info"]);
+        console.log("fetched result[]: " + JSON.stringify(res) );
+        this.status = res;
       })
       .catch(err => {
         console.error(err);
