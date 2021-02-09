@@ -1,17 +1,17 @@
-#acs-status {
+#tmcdb {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 45%;
+    height: 45%;
     overflow: auto;   
 }
 
-#acs-status p {
+#tmcdb p {
     background-color: rgba(95, 145, 158, 0.39);
     margin: 5px;
 }
 
-#acs-status pre {
+#tmcdb pre {
     margin: 5px;
     font-size: .5em;
     background-color: blanchedalmond;
 }
-
