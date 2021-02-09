@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { AcsStatusComponent } from './components/acs-status/acs-status.component';
 import { AcsStatusService } from './services/acs-status.service';
 import { TmcdbComponent } from './components/tmcdb/tmcdb.component';
+import { SubsystemsComponent } from './components/subsystems/subsystems.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AcsStatusComponent,
-    TmcdbComponent
+    TmcdbComponent,
+    SubsystemsComponent
   ],
   imports: [
     BrowserModule,
