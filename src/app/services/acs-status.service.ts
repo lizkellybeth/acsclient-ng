@@ -1,3 +1,4 @@
+import { AcsStatusWrapper } from './../components/acs-status/istatus';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClientJsonpModule } from '@angular/common/http';
@@ -12,7 +13,9 @@ export class AcsStatusService {
   constructor(private http: HttpClient) {}
 
   fetchAcsStatus(): Promise<any> {
-    return this.http.jsonp(this.rootUrl + "/acs-status", 'callback').toPromise();
+   // return this.http.jsonp(this.rootUrl + "/acs-status", 'callback').toPromise();
+    return this.http.get(this.rootUrl + "/acs-status").toPromise();
+   
   }
 
   fetchMockStatus(){

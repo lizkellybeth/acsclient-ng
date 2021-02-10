@@ -1,7 +1,9 @@
+import { element } from 'protractor';
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { AcsStatusService } from '../../services/acs-status.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AcsStatusWrapper } from './istatus';
 
 @Component({
   selector: 'app-acs-status',
@@ -10,7 +12,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 })
 export class AcsStatusComponent implements OnInit {
 
-  status = "";
+  public status: any= "foo";
 
   constructor(public service: AcsStatusService) { }
 
@@ -22,7 +24,7 @@ export class AcsStatusComponent implements OnInit {
   fetchStatus() {
     this.service.fetchAcsStatus()
       .then(res => {
-        console.log("fetched result[]: " + JSON.stringify(res) );
+        //console.log("fetched result: " + (res ));
         this.status = res;
       })
       .catch(err => {

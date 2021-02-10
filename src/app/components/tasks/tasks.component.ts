@@ -1,5 +1,6 @@
 import { TasksService } from '../../services/tasks.service';
 import { Component, OnInit } from '@angular/core';
+import { TaskWrapper } from './itasks';
 
 @Component({
   selector: 'app-tasks',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksComponent implements OnInit {
 
-  tasks = "";
+  tasks: TaskWrapper[] = [];
 
   constructor(public service: TasksService) { }
 
@@ -19,8 +20,13 @@ export class TasksComponent implements OnInit {
   fetchTasks() {
     this.service.fetchTasks()
     .then(res => {
-      console.log("fetched result[]: " + JSON.stringify(res) );
-      this.tasks = res;
+      //console.log("fetched result[]: " + JSON.stringify(res) );
+      let obj: TaskWrapper[] = res;
+      console.log("HERES A field: " + obj[0].name);
+      console.log("HERES A field: " + obj[0].parameters);
+      console.log("HERES A field: " + obj[0].id);
+      console.log("HERES A field: " + obj[0].complete);
+      this.tasks = obj;//JSON.stringify(res);
     })
     .catch(err => {
       console.error(err);
@@ -30,10 +36,6 @@ export class TasksComponent implements OnInit {
   private _title = "Tasks Component";
   public get title() {
     return this._title;
-  }
-
-  public getTasks(): string {
-    return this.tasks;
   }
 
 }
