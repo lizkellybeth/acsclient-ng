@@ -1,3 +1,4 @@
+import { IContainer } from './icontainer';
 import { Component, OnInit } from '@angular/core';
 import { TmcdbService } from 'src/app/services/tmcdb.service';
 
@@ -8,7 +9,7 @@ import { TmcdbService } from 'src/app/services/tmcdb.service';
 })
 export class TmcdbComponent implements OnInit {
 
-  tmcdbJson = "";
+  containers: IContainer[] = [];
 
   constructor(public service: TmcdbService) { }
 
@@ -18,14 +19,19 @@ export class TmcdbComponent implements OnInit {
 
   fetchTmcdbConfig() {
     this.service.fetchTmcdbConfig()
-      .then(res => {
-      this.tmcdbJson = res;//JSON.stringify(res);
-      console.log("fetched tmcdbJson: " + this.tmcdbJson);
-
-      })
-      .catch(err => {
-        console.error(err);
-      });
+    .then(res => {
+      //console.log("fetched result[]: " + JSON.stringify(res) );
+      let obj: IContainer[] = res;
+      console.log("HERES A field: " + obj[0].containerId);
+      console.log("HERES A field: " + obj[0].computer);
+      console.log("HERES A field: " + obj[0].containerName);
+      console.log("HERES A field: " + obj[0].path);
+      console.log("HERES A field: " + obj[0].implLang);
+      this.containers = obj;//JSON.stringify(res);
+    })
+    .catch(err => {
+      console.error(err);
+    });
   }
   private _title = "Tmcdb Config Component";
   public get title() {

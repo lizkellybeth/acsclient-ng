@@ -5,6 +5,3 @@ export interface TaskWrapper {
     parameters: string;
 }
 
-export interface TaskListWrapper {
-    tasks: TaskWrapper[];
-}

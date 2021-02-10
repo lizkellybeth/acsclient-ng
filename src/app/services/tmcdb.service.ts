@@ -1,3 +1,4 @@
+import { IContainer } from './../components/tmcdb/icontainer';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -10,8 +11,8 @@ export class TmcdbService {
 
   constructor(private http: HttpClient) { }
 
-  fetchTmcdbConfig(): Promise<any> {
-    return this.http.jsonp(this.rootUrl + "/display-tmcdb-containers", 'callback').toPromise();
+  fetchTmcdbConfig(): Promise<IContainer[]> {
+    return this.http.get<IContainer[]>(this.rootUrl + "/display-tmcdb-containers").toPromise();
   }
 
 
