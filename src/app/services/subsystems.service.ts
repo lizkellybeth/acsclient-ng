@@ -1,4 +1,4 @@
-import { ISubsystem } from './../components/subsystems/isubsystem';
+import { SubsystemWrapper } from './../components/subsystems/isubsystem';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -11,8 +11,8 @@ export class SubsystemsService {
 
   readonly rootUrl = "http://rubyps:10021/acsclient";
 
-  fetchSubsystems(): Promise<ISubsystem[]> {
-    return this.http.get<ISubsystem[]>(this.rootUrl + "/display-subsystems").toPromise();
+  fetchSubsystems(): Promise<SubsystemWrapper[]> {
+    return this.http.get<SubsystemWrapper[]>(this.rootUrl + "/display-subsystems").toPromise();
      
   }
 

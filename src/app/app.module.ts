@@ -24,7 +24,7 @@ import { TasksComponent } from './components/tasks/tasks.component';
     HttpClientModule,
     HttpClientJsonpModule,
     BrowserAnimationsModule,
-    DragDropModule
+    DragDropModule,
   ],
   providers: [AcsStatusService],
   bootstrap: [AppComponent]

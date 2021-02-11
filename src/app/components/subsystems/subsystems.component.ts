@@ -1,6 +1,6 @@
 import { SubsystemsService } from '../../services/subsystems.service';
 import { Component, OnInit } from '@angular/core';
-import { ISubsystem } from './isubsystem';
+import { SubsystemWrapper, ComponentWrapper } from './isubsystem';
 
 @Component({
   selector: 'app-subsystems',
@@ -9,7 +9,7 @@ import { ISubsystem } from './isubsystem';
 })
 export class SubsystemsComponent implements OnInit {
 
-  subsystems: ISubsystem[] = [];
+  subsystems: SubsystemWrapper[] = [];
 
   constructor(public service: SubsystemsService) { }
 
@@ -22,11 +22,13 @@ export class SubsystemsComponent implements OnInit {
     this.service.fetchSubsystems()
     .then(res => {
       console.log("fetched result[]: " + JSON.stringify(res) );
-      let obj: ISubsystem[] = res;
-      console.log("HERES A field: " + obj[0].name);
-      console.log("HERES A field: " + obj[0].masterComponent);
-      console.log("HERES A field: " + obj[0].components);
-      this.subsystems = obj;//JSON.stringify(res);
+      let subsystems: SubsystemWrapper[] = res;
+      let subsystem: SubsystemWrapper = subsystems[1];
+      let master: ComponentWrapper = subsystem["master"];
+      console.log("HERES A subname: " + subsystem.name);
+      console.log("HERES A mastername: " + master.name);
+
+      this.subsystems = subsystems;//JSON.stringify(res);
      })
     .catch(err => {
       console.error(err);

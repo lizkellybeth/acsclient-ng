@@ -22,11 +22,13 @@ export class TmcdbComponent implements OnInit {
     .then(res => {
       //console.log("fetched result[]: " + JSON.stringify(res) );
       let obj: IContainer[] = res;
+      /*
       console.log("HERES A field: " + obj[0].containerId);
       console.log("HERES A field: " + obj[0].computer);
       console.log("HERES A field: " + obj[0].containerName);
       console.log("HERES A field: " + obj[0].path);
       console.log("HERES A field: " + obj[0].implLang);
+      */
       this.containers = obj;//JSON.stringify(res);
     })
     .catch(err => {

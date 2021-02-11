@@ -2,6 +2,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 45%;
     overflow: auto;   
+    display: inline-block;
 }
 
 #acs-status p {

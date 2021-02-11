@@ -1,10 +1,10 @@
-export interface ISubsystem {
+export interface SubsystemWrapper {
     name: string;
-    masterComponent: IComponent;
-    components: IComponent[];
+    master: ComponentWrapper;
+    components: ComponentWrapper[];
 }
 
-export interface IComponent {
+export interface ComponentWrapper {
     name: string;
     idx: number;
     master: boolean; 

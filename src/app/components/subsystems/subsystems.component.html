@@ -2,8 +2,9 @@
 
     <p>{{title}}</p>
     <div>
-    <ul>
-        <li *ngFor="let subsystem of subsystems">{{subsystem.name}}</li>
-    </ul>
-</div>
+            <div *ngFor="let subsystem of subsystems">
+                {{subsystem.name}} <br>
+              </div>
+
+    </div>
 </div>

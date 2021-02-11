@@ -22,10 +22,12 @@ export class TasksComponent implements OnInit {
     .then(res => {
       //console.log("fetched result[]: " + JSON.stringify(res) );
       let obj: ITask[] = res;
+      /*
       console.log("HERES A field: " + obj[0].name);
       console.log("HERES A field: " + obj[0].parameters);
       console.log("HERES A field: " + obj[0].id);
       console.log("HERES A field: " + obj[0].complete);
+      */
       this.tasks = obj;//JSON.stringify(res);
     })
     .catch(err => {
