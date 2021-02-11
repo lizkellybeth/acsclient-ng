@@ -1,10 +1,3 @@
-#acs-status {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    width: 45%;
-    overflow: auto;   
-    display: inline-block;
-}
-
 #acs-status p {
     background-color: rgba(95, 145, 158, 0.39);
     margin: 5px;

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class TmcdbService {
+export class ContainersService {
 
   readonly rootUrl = "http://rubyps:10021/acsclient";
 

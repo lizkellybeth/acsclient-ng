@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AcsStatusComponent } from './components/acs-status/acs-status.component';
 import { AcsStatusService } from './components/acs-status/acs-status.service';
-import { TmcdbComponent } from './components/tmcdb/tmcdb.component';
+import { ContainersComponent } from './components/containers/containers.component';
 import { SubsystemsComponent } from './components/subsystems/subsystems.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 
@@ -15,7 +15,7 @@ import { TasksComponent } from './components/tasks/tasks.component';
   declarations: [
     AppComponent,
     AcsStatusComponent,
-    TmcdbComponent,
+    ContainersComponent,
     SubsystemsComponent,
     TasksComponent
   ],

@@ -1,7 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; }
+
+.acs-component {
+  width: 48%;
+  overflow: auto;   
+  display: inline-block;  
+  max-height: 45%;
+  min-height: 33%;
+  padding: 2px;
+  margin: 10px;
+  background-color: white;
+}
 
 .draggable {
     border: solid 1px #ccc;

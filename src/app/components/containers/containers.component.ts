@@ -1,17 +1,17 @@
 import { IContainer } from './icontainer';
 import { Component, OnInit } from '@angular/core';
-import { TmcdbService } from 'src/app/components/tmcdb/tmcdb.service';
+import { ContainersService } from 'src/app/components/containers/containers.service';
 
 @Component({
-  selector: 'app-tmcdb',
-  templateUrl: './tmcdb.component.html',
-  styleUrls: ['./tmcdb.component.css']
+  selector: 'app-containers',
+  templateUrl: './containers.component.html',
+  styleUrls: ['./containers.component.css']
 })
-export class TmcdbComponent implements OnInit {
+export class ContainersComponent implements OnInit {
 
   containers: IContainer[] = [];
 
-  constructor(public service: TmcdbService) { }
+  constructor(public service: ContainersService) { }
 
   ngOnInit(): void {
     this.fetchTmcdbConfig();
@@ -35,7 +35,7 @@ export class TmcdbComponent implements OnInit {
       console.error(err);
     });
   }
-  private _title = "Tmcdb Config Containers";
+  private _title = "Containers";
   public get title() {
     return this._title;
   }
