@@ -1,4 +1,4 @@
-import { IContainer } from './../components/tmcdb/icontainer';
+import { IContainer } from './icontainer';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 

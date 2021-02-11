@@ -1,4 +1,4 @@
-import { SubsystemWrapper } from './../components/subsystems/isubsystem';
+import { SubsystemWrapper } from './isubsystem';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 

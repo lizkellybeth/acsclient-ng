@@ -1,6 +1,6 @@
 import { IContainer } from './icontainer';
 import { Component, OnInit } from '@angular/core';
-import { TmcdbService } from 'src/app/services/tmcdb.service';
+import { TmcdbService } from 'src/app/components/tmcdb/tmcdb.service';
 
 @Component({
   selector: 'app-tmcdb',

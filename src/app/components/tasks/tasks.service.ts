@@ -1,4 +1,4 @@
-import { ITask } from './../components/tasks/itasks';
+import { ITask } from './itasks';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 

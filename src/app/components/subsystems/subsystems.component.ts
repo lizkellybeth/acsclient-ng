@@ -1,4 +1,4 @@
-import { SubsystemsService } from '../../services/subsystems.service';
+import { SubsystemsService } from './subsystems.service';
 import { Component, OnInit } from '@angular/core';
 import { SubsystemWrapper, ComponentWrapper } from './isubsystem';
 

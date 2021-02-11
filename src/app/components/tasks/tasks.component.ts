@@ -1,4 +1,4 @@
-import { TasksService } from '../../services/tasks.service';
+import { TasksService } from './tasks.service';
 import { Component, OnInit } from '@angular/core';
 import { ITask } from './itasks';
 

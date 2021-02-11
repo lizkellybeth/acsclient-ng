@@ -1,7 +1,7 @@
 import { element } from 'protractor';
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { AcsStatusService } from '../../services/acs-status.service';
+import { AcsStatusService } from './acs-status.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { IStatus } from './istatus';
 
