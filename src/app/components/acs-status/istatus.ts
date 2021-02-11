@@ -1,3 +1,3 @@
-export interface AcsStatusWrapper {
+export interface IStatus {
     info: string;
 }

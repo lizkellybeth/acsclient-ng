@@ -10,7 +10,7 @@
     margin: 5px;
 }
 
-#tasks pre {
+#tasks div {
     margin: 5px;
     font-size: .5em;
     background-color: blanchedalmond;

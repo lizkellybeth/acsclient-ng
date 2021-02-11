@@ -1,5 +1,6 @@
 import { SubsystemsService } from '../../services/subsystems.service';
 import { Component, OnInit } from '@angular/core';
+import { ISubsystem } from './isubsystem';
 
 @Component({
   selector: 'app-subsystems',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubsystemsComponent implements OnInit {
 
-  subsystems = "";
+  subsystems: ISubsystem[] = [];
 
   constructor(public service: SubsystemsService) { }
 
@@ -21,8 +22,12 @@ export class SubsystemsComponent implements OnInit {
     this.service.fetchSubsystems()
     .then(res => {
       console.log("fetched result[]: " + JSON.stringify(res) );
-      this.subsystems = res;
-    })
+      let obj: ISubsystem[] = res;
+      console.log("HERES A field: " + obj[0].name);
+      console.log("HERES A field: " + obj[0].masterComponent);
+      console.log("HERES A field: " + obj[0].components);
+      this.subsystems = obj;//JSON.stringify(res);
+     })
     .catch(err => {
       console.error(err);
     });
@@ -34,10 +39,6 @@ export class SubsystemsComponent implements OnInit {
   }
 
   
-  public getSubsystems(): string {
-    return this.subsystems;
-  }
-
   }
 
 

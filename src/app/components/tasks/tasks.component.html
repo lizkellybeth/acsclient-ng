@@ -1,9 +1,10 @@
 <div id="tasks" class="draggable" cdkDrag>
 
     <p>{{title}}</p>
+    <div>
     <ul>
         <li *ngFor="let task of tasks">{{task.name}}</li>
     </ul>
-    
+</div>
 
 </div>

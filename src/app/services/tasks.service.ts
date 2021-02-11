@@ -1,4 +1,4 @@
-import { TaskWrapper } from './../components/tasks/itasks';
+import { ITask } from './../components/tasks/itasks';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -10,8 +10,8 @@ export class TasksService {
 
   readonly rootUrl = "http://rubyps:10021/acsclient";
 
-  fetchTasks(): Promise<TaskWrapper[]> {
-    return this.http.get<TaskWrapper[]>(this.rootUrl + "/display-tasks").toPromise();
+  fetchTasks(): Promise<ITask[]> {
+    return this.http.get<ITask[]>(this.rootUrl + "/display-tasks").toPromise();
      
   }
 }

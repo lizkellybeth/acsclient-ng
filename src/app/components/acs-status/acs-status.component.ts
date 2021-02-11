@@ -3,7 +3,7 @@ import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { AcsStatusService } from '../../services/acs-status.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { AcsStatusWrapper } from './istatus';
+import { IStatus } from './istatus';
 
 @Component({
   selector: 'app-acs-status',

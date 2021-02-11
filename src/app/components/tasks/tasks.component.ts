@@ -1,6 +1,6 @@
 import { TasksService } from '../../services/tasks.service';
 import { Component, OnInit } from '@angular/core';
-import { TaskWrapper } from './itasks';
+import { ITask } from './itasks';
 
 @Component({
   selector: 'app-tasks',
@@ -9,7 +9,7 @@ import { TaskWrapper } from './itasks';
 })
 export class TasksComponent implements OnInit {
 
-  tasks: TaskWrapper[] = [];
+  tasks: ITask[] = [];
 
   constructor(public service: TasksService) { }
 
@@ -21,7 +21,7 @@ export class TasksComponent implements OnInit {
     this.service.fetchTasks()
     .then(res => {
       //console.log("fetched result[]: " + JSON.stringify(res) );
-      let obj: TaskWrapper[] = res;
+      let obj: ITask[] = res;
       console.log("HERES A field: " + obj[0].name);
       console.log("HERES A field: " + obj[0].parameters);
       console.log("HERES A field: " + obj[0].id);

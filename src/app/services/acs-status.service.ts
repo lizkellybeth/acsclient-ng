@@ -1,4 +1,4 @@
-import { AcsStatusWrapper } from './../components/acs-status/istatus';
+import { IStatus } from './../components/acs-status/istatus';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClientJsonpModule } from '@angular/common/http';

@@ -33,7 +33,7 @@ export class TmcdbComponent implements OnInit {
       console.error(err);
     });
   }
-  private _title = "Tmcdb Config Component";
+  private _title = "Tmcdb Config Containers";
   public get title() {
     return this._title;
   }
