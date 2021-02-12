@@ -49,8 +49,8 @@ body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; }
 .draggable {
     border: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
-    cursorxx: move;
-
+    cursorxxx: move;
+  margin: 10px;
     /**display: flex;*/
     border-radius: 4px;
     position: relative;
