@@ -1,10 +1,50 @@
-<div id="tasks" class="acs-component draggable" cdkDrag>
+<div id="tasks" class="acs-component draggable">
 
-    <p>{{title}}</p>
+    <div class="header-div">
+        <p>{{title}}</p>
+    </div>
+
     <div>
-    <ul>
-        <li *ngFor="let task of tasks">{{task.name}}</li>
-    </ul>
-</div>
+        <mat-accordion>
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Tasks
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Status of Tasks submitted from acsclient
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <!-- insert content below...-->
 
+                <div class="content-div">
+                    <table class='acs-table'>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Complete</th>
+                                <th>ID</th>
+                                <th>Start Time</th>
+                                <th>Parameters</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let task of tasks">
+                                <td>{{task.name}}</td>
+                                <td>{{task.complete}}</td>
+                                <td>{{task.id}}</td>
+                                <td>{{task.startTime}}</td>
+                                <td>{{task.parameters}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <!-- insert content above...-->
+
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </div>
 </div>

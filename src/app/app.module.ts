@@ -10,6 +10,10 @@ import { AcsStatusService } from './components/acs-status/acs-status.service';
 import { ContainersComponent } from './components/containers/containers.component';
 import { SubsystemsComponent } from './components/subsystems/subsystems.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatExpansionModule} from '@angular/material/expansion'
 
 @NgModule({
   declarations: [
@@ -25,6 +29,10 @@ import { TasksComponent } from './components/tasks/tasks.component';
     HttpClientJsonpModule,
     BrowserAnimationsModule,
     DragDropModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatExpansionModule
   ],
   providers: [AcsStatusService],
   bootstrap: [AppComponent]

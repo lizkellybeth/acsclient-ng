@@ -12,6 +12,7 @@ import { IStatus } from './istatus';
 })
 export class AcsStatusComponent implements OnInit {
 
+  panelOpenState = false;
   public status: any= "foo";
 
   constructor(public service: AcsStatusService) { }
@@ -31,7 +32,7 @@ export class AcsStatusComponent implements OnInit {
         console.error(err);
       });
   }
-  private _title = "ACS Status Component";
+  private _title = "ACS Status";
   public get title() {
     return this._title;
   }

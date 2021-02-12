@@ -1,10 +1,32 @@
-<div id="subsystems"  class="acs-component draggable"  cdkDrag>
+<div id="subsystems" class="acs-component draggable">
 
-    <p>{{title}}</p>
+    <div class="header-div">
+        <p>{{title}}</p>
+    </div>
+
     <div>
-            <div *ngFor="let subsystem of subsystems">
-                {{subsystem.name}} <br>
-              </div>
+        <mat-accordion>
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Subsystems
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        as defined in ExecConfig.xml
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <!-- insert content below...-->
+
+                <div class="content-div">
+                    <div *ngFor="let subsystem of subsystems">
+                        {{subsystem.name}} <br>
+                    </div>
+                </div>
+
+                <!-- insert content above...-->
+
+            </mat-expansion-panel>
+        </mat-accordion>
 
     </div>
 </div>

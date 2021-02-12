@@ -1,6 +1,28 @@
-<div id="acs-status" class="acs-component draggable" cdkDrag>
+<div id="acs-status" class="acs-component draggable">
 
-<p>{{title}}</p>
-<pre>{{status}}</pre>
+    <div class="header-div">
+        <p>{{title}}</p>
+    </div>
 
+    <div>
+        <mat-accordion>
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        ACS Status
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Raw output from ServiceDaemon
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <!-- insert content below...-->
+                <div class="content-div">
+                    <pre>{{status}}</pre>
+                </div>
+                <!-- insert content above...-->
+
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </div>
 </div>

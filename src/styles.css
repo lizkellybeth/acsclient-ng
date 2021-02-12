@@ -3,21 +3,54 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; }
 
-.acs-component {
+.header-div{
+  font-size: 12px;
+}
+
+.content-div {
+  max-height: 100%;
+}
+
+#div-left{
+  vertical-align: top;
   width: 48%;
+  display: inline-table;
+  height: 100%;
+}
+
+#div-right {
+  vertical-align: top;
+  width: 48%;
+  display: inline-table;
+  height: 100%;
+
+}
+
+.acs-component {
+  width: 95%;
   overflow: auto;   
   display: inline-block;  
-  max-height: 45%;
-  min-height: 33%;
+  max-height: 600px;
+  min-heightxx: 33%;
   padding: 2px;
   margin: 10px;
   background-color: white;
 }
 
+.acs-table {
+  width: 100%
+}
+
+.acs-table th {
+  width: 15%;
+  text-align: left;
+}
+
 .draggable {
     border: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
-    cursor: move;
+    cursorxx: move;
+
     /**display: flex;*/
     border-radius: 4px;
     position: relative;
