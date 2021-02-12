@@ -26,6 +26,10 @@ body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; }
 
 }
 
+.acs-table {
+  background-color: rgb(221, 247, 205);
+}
+
 .acs-component {
   width: 95%;
   overflow: auto;   
@@ -34,7 +38,7 @@ body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; }
   min-heightxx: 33%;
   padding: 2px;
   margin: 10px;
-  background-color: white;
+  background-color: rgb(226, 255, 209);
 }
 
 .acs-table {
