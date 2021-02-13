@@ -9,4 +9,15 @@
     background-color: white;
 }
 
+.button-div button {
+    margin-inline: 20px;
+    margin-top: 10px;   
+}
 
+.btn-refresh{
+    float: right;
+}
+
+.error-row{
+    background-color: rgb(255, 155, 155);
+}

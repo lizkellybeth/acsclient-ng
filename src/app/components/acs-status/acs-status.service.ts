@@ -2,6 +2,7 @@ import { IStatus } from './istatus';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClientJsonpModule } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,19 @@ export class AcsStatusService {
   fetchAcsStatus(): Promise<any> {
    // return this.http.jsonp(this.rootUrl + "/acs-status", 'callback').toPromise();
     return this.http.get(this.rootUrl + "/acs-status").toPromise();
-   
   }
 
-  fetchMockStatus(){
+  startAcs(): Promise<any> {
+    // return this.http.jsonp(this.rootUrl + "/acs-status", 'callback').toPromise();
+     return this.http.get(this.rootUrl + "/acs-start").toPromise();
+  }
+ 
+  stopAcs(): Promise<any> {
+    // return this.http.jsonp(this.rootUrl + "/acs-status", 'callback').toPromise();
+     return this.http.get(this.rootUrl + "/acs-stop").toPromise();
+  }
+ 
+    fetchMockStatus(){
     return `
     Status for ACS instance: 0
     ------------------------------------------------------------------------

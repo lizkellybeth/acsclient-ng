@@ -4,5 +4,7 @@ export interface ITask {
     id: number;
     startTime: number;
     parameters: string;
+    exception: string;
+    hasResult: boolean;
 }
 

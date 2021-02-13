@@ -4,6 +4,10 @@
         <p>{{title}}</p>
     </div>
 
+    <div class="button-div">
+        <button class="btn-refresh" (click)="refreshTasks()">Refresh Tasks</button> 
+    </div>
+
     <div>
         <mat-accordion class="acs-component">
             <mat-expansion-panel hideToggle>
@@ -12,7 +16,7 @@
                         Tasks:
                     </mat-panel-title>
                     <mat-panel-description>
-                        status of tasks submitted from acsclient
+                        tasks submitted from acsclient
                     </mat-panel-description>
                 </mat-expansion-panel-header>
                 <!-- insert content below...-->
@@ -26,15 +30,17 @@
                                 <th>ID</th>
                                 <th>Start Time</th>
                                 <th>Parameters</th>
+                                <th>Exception</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let task of tasks">
+                            <tr *ngFor="let task of tasks" [ngClass]="{'error-row': (task.exception)}" >
                                 <td>{{task.name}}</td>
                                 <td>{{task.complete}}</td>
                                 <td>{{task.id}}</td>
                                 <td>{{task.startTime}}</td>
                                 <td>{{task.parameters}}</td>
+                                <td>{{task.exception}}</td>
                             </tr>
                         </tbody>
                     </table>

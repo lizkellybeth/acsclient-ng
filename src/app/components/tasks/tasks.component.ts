@@ -14,13 +14,18 @@ export class TasksComponent implements OnInit {
   constructor(public service: TasksService) { }
 
   ngOnInit(): void {
+    this.fetchTasks(); 
+  }
+
+  refreshTasks(){
+    console.log("Refresh Tasks");
     this.fetchTasks();
   }
 
   fetchTasks() {
     this.service.fetchTasks()
     .then(res => {
-      //console.log("fetched result[]: " + JSON.stringify(res) );
+      //console.log("fetched tasks: " + JSON.stringify(res) ); 
       let obj: ITask[] = res;
       /*
       console.log("HERES A field: " + obj[0].name);

@@ -4,6 +4,12 @@
         <p>{{title}}</p>
     </div>
 
+    <div class="button-div">
+        <button (click)="startAcs()">Start ACS</button> 
+        <button (click)="stopAcs()">Stop ACS</button> 
+        <button class="btn-refresh" (click)="refreshAcs()">Refresh Status</button> 
+    </div>
+
     <div>
         <mat-accordion class="acs-component">
             <mat-expansion-panel hideToggle>
@@ -23,6 +29,6 @@
 
             </mat-expansion-panel>
         </mat-accordion>
-
     </div>
-</div>
+
+ </div>

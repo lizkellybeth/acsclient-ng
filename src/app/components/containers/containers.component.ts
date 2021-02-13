@@ -29,7 +29,7 @@ export class ContainersComponent implements OnInit {
       console.error(err);
     });
   }
-  private _title = "Containers";
+  private _title = "Containers Component";
   public get title() {
     return this._title;
   }

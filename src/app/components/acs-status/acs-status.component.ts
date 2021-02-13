@@ -22,6 +22,21 @@ export class AcsStatusComponent implements OnInit {
     //this.fetchMockStatus();
   }
 
+  startAcs(){
+    console.log("Start ACS");
+    this.fetchStartAcs();
+  }
+
+  stopAcs(){
+    console.log("Stop ACS");
+    this.fetchStopAcs();
+  }
+
+  refreshAcs(){
+    console.log("Refresh ACS");
+    this.fetchStatus();
+  }
+
   fetchStatus() {
     this.service.fetchAcsStatus()
       .then(res => {
@@ -32,7 +47,30 @@ export class AcsStatusComponent implements OnInit {
         console.error(err);
       });
   }
-  private _title = "ACS Status";
+  
+  fetchStartAcs(){
+    this.service.startAcs()
+      .then(res => {
+        console.log("startAcs result: " + (res ));
+      })
+      .catch(err => {
+        console.error(err);
+      });
+
+  }
+
+  fetchStopAcs(){
+    this.service.stopAcs()
+      .then(res => {
+        console.log("stopAcs result: " + (res ));
+      })
+      .catch(err => {
+        console.error(err);
+      });
+
+  }
+
+  private _title = "ACS Status Component";
   public get title() {
     return this._title;
   }
