@@ -5,7 +5,6 @@
 
 #acs-status div {
     margin: 5px;
-    font-size: .5em;
     background-color: white;
 }
 
@@ -16,4 +15,10 @@
 
 .btn-refresh{
     float: right;
+}
+
+
+#status-pre {
+    width: 100%;
+    overflow: auto;
 }
