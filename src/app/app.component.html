@@ -1,9 +1,22 @@
-<div id="div-left">
-    <app-acs-status></app-acs-status>
-</div>
+<div id="mainDiv">
+    <div id="menuDiv">
+        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+        </mat-menu>
+    </div>
+    
+    <mat-divider class="divider"></mat-divider>
 
-<div id="div-right">
-    <app-tasks></app-tasks>
-    <app-subsystems></app-subsystems>
-    <app-containers></app-containers>
+    <div id="div-left">
+        <app-acs-status></app-acs-status>
+    </div>
+
+    <div id="div-right">
+        <app-tasks></app-tasks>
+        <app-subsystems></app-subsystems>
+        <app-containers></app-containers>
+    </div>
+
 </div>

@@ -3,6 +3,17 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; }
 
+#menuDiv{
+  width: 96%;
+  margin-left: 10px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.divider {
+  margin: 5px;
+}
+
 .header-div{
   font-size: 12px;
 }
@@ -37,7 +48,7 @@ body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; }
   max-height: 600px;
   min-heightxx: 33%;
   padding: 2px;
-  margin: 10px;
+  margin: 5px;
   background-color: rgb(226, 255, 209);
 }
 
@@ -71,6 +82,37 @@ body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; }
                 0 3px 14px 2px rgba(0, 0, 0, 0.12);
   }
 
-.mat-expansion-panel-body {
-  font-size: 10px;
+.leftArrow{
+  float: left;
+  height: 100%;
+}
+
+.rightArrow{
+  float: right;
+  height: 100%;
+  z-index: 100;
+}
+
+.upArrow {
+  margin: auto;
+  height: 100%;
+  float: right;
+  z-index: 100;
+}
+
+.downArrow {
+  margin: auto;
+  height: 100%;
+  float: left;
+  z-index: 100;
+}
+
+.component-arrows-div {
+  position:sticky;
+  border-style: solid;
+  border-width: 0px;
+  height: 18px;
+  margin-top: -20px;
+  width: 98%;
+  top: 100px;
 }

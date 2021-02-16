@@ -1,5 +1,6 @@
+import { Container } from '@angular/compiler/src/i18n/i18n_ast';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,7 +14,9 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { MatExpansionModule} from '@angular/material/expansion'
+import { MatExpansionModule} from '@angular/material/expansion';
+import {  MatMenuModule } from "@angular/material/menu";
+import {  MatDividerModule } from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { MatExpansionModule} from '@angular/material/expansion'
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatMenuModule,
+    MatDividerModule
   ],
   providers: [AcsStatusService],
   bootstrap: [AppComponent]

@@ -1,13 +1,13 @@
-<div id="acs-status" class="draggable">
+<div ngModel id="acs-status" class="draggable" #acsStatus>
 
     <div class="header-div">
-        <p>{{title}}</p>
+        <span>{{title}}</span>
     </div>
 
     <div class="button-div">
-        <button (click)="startAcs()">Start ACS</button> 
-        <button (click)="stopAcs()">Stop ACS</button> 
-        <button class="btn-refresh" (click)="refreshAcs()">Refresh Status</button> 
+        <button (click)="startAcs()">Start ACS</button>
+        <button (click)="stopAcs()">Stop ACS</button>
+        <button class="btn-refresh" (click)="refreshAcs()">Refresh Status</button>
     </div>
 
     <div>
@@ -22,13 +22,19 @@
                     </mat-panel-description>
                 </mat-expansion-panel-header>
                 <!-- insert content below...-->
-                
+                <div class="content-div">
                     <pre id="status-pre" class="acs-table">{{status}}</pre>
-               
+                </div>
                 <!-- insert content above...-->
 
             </mat-expansion-panel>
         </mat-accordion>
+        <div class="component-arrows-div">
+            <img (click)="downArrow('acs-status')" class="downArrow" src="assets/icons/gnome/go-down.png" />
+            <img (click)="upArrow('acs-status')" class="upArrow" src="assets/icons/gnome/go-up.png" />
+            <img (click)="rightArrow('acs-status')" class="rightArrow" src="assets/icons/gnome/go-next.png" />
+        </div>
+
     </div>
 
- </div>
+</div>

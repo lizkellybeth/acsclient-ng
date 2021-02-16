@@ -1,6 +1,6 @@
-import { element } from 'protractor';
+import { $, element } from 'protractor';
 import { stringify } from '@angular/compiler/src/util';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AcsStatusService } from './acs-status.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { IStatus } from './istatus';
@@ -10,16 +10,21 @@ import { IStatus } from './istatus';
   templateUrl: './acs-status.component.html',
   styleUrls: ['./acs-status.component.css']
 })
-export class AcsStatusComponent implements OnInit {
+export class AcsStatusComponent implements OnInit, AfterViewInit {
 
   panelOpenState = false;
   public status: any= "foo";
 
-  constructor(public service: AcsStatusService) { }
+  constructor(public service: AcsStatusService) { 
+
+  }
 
   ngOnInit(): void {
     this.fetchStatus();
     //this.fetchMockStatus();
+  }
+
+  ngAfterViewInit(){
   }
 
   startAcs(){
@@ -37,7 +42,21 @@ export class AcsStatusComponent implements OnInit {
     this.fetchStatus();
   }
 
-  fetchStatus() {
+  rightArrow(name:string){
+    console.log(name);     
+  }
+
+  upArrow(name:string){
+    console.log(name);   
+  }
+
+  downArrow(name:string){
+    console.log(name);    
+  }
+
+
+
+ fetchStatus() {
     this.service.fetchAcsStatus()
       .then(res => {
         //console.log("fetched result: " + (res ));

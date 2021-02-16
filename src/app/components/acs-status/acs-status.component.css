@@ -1,10 +1,16 @@
-#acs-status p {
+#acs-status .component-title {
     background-color: rgba(95, 145, 158, 0.39);
-    margin: 5px;
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+}
+
+#acs-status .component-title span{
+    margin: auto;
 }
 
 #acs-status div {
-    margin: 5px;
+    margin: 3px;
     background-color: white;
 }
 
@@ -17,8 +23,11 @@
     float: right;
 }
 
-
-#status-pre {
+.mat-expansion-panel-body *{
+    font-size: 10px;
+}
+  
+  #status-pre {
     width: 100%;
     overflow: auto;
 }
