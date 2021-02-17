@@ -42,17 +42,11 @@ export class AcsStatusComponent implements OnInit, AfterViewInit {
     this.fetchStatus();
   }
 
-  rightArrow(name:string){
-    console.log(name);     
+  goDown(){
+    console.log("click down");
+    
   }
 
-  upArrow(name:string){
-    console.log(name);   
-  }
-
-  downArrow(name:string){
-    console.log(name);    
-  }
 
 
 

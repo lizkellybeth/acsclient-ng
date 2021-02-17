@@ -1,5 +1,7 @@
-<div id="mainDiv">
-    <div id="menuDiv">
+
+<div #container id="mainDiv">
+    
+    <div #menuDiv id="menuDiv">
         <button mat-button [matMenuTriggerFor]="menu">Menu</button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item>Item 1</button>
@@ -9,14 +11,12 @@
     
     <mat-divider class="divider"></mat-divider>
 
-    <div id="div-left">
-        <app-acs-status></app-acs-status>
+    <div #divLeft id="div-left">
+        
     </div>
 
-    <div id="div-right">
-        <app-tasks></app-tasks>
-        <app-subsystems></app-subsystems>
-        <app-containers></app-containers>
+    <div #divRight id="div-right">
+        
     </div>
 
 </div>

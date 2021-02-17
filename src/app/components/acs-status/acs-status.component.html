@@ -1,4 +1,4 @@
-<div ngModel id="acs-status" class="draggable" #acsStatus>
+<div id="acs-status" class="draggable" #acsStatus>
 
     <div class="header-div">
         <span>{{title}}</span>
@@ -30,9 +30,9 @@
             </mat-expansion-panel>
         </mat-accordion>
         <div class="component-arrows-div">
-            <img (click)="downArrow('acs-status')" class="downArrow" src="assets/icons/gnome/go-down.png" />
-            <img (click)="upArrow('acs-status')" class="upArrow" src="assets/icons/gnome/go-up.png" />
-            <img (click)="rightArrow('acs-status')" class="rightArrow" src="assets/icons/gnome/go-next.png" />
+            <img (click)="goDown()" class="downArrow" src="assets/icons/gnome/go-down.png" />
+            <img class="upArrow" src="assets/icons/gnome/go-up.png" />
+            <img class="rightArrow" src="assets/icons/gnome/go-next.png" />
         </div>
 
     </div>

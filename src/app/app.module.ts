@@ -1,6 +1,6 @@
 import { Container } from '@angular/compiler/src/i18n/i18n_ast';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { NgModule, Component } from '@angular/core';
+import { NgModule, Component, ViewRef, ViewContainerRef, ComponentFactoryResolver, ComponentRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
