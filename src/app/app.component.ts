@@ -47,14 +47,20 @@ export class AppComponent implements AfterViewInit{
   }
 
   ngAfterInit(): void {
-    this.addComponent(this.acsstatusClass);  
+    console.log("ngAfterInit " );
+  }
+
+  ngOnInit(){
+    console.log("ngOnInit " );
+    
   }
 
   ngAfterViewInit(){
-    
-    console.log("HEEEEEY " );
+    setTimeout(() => {
+    console.log("ngAfterViewInit " );
     //this.renderer.removeChild(this.mainDiv?.nativeElement, this.menuDiv?.nativeElement);
     this.addComponent(this.acsstatusClass);  
+    },0)
   }
 
   
