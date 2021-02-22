@@ -1,0 +1,35 @@
+#components p {
+    background-color: rgba(95, 145, 158, 0.39);
+    margin: 5px;
+}
+
+#components div {
+    margin: 5px;
+    background-color: white;
+}
+
+.button-div  {
+    margin-top: 10px;   
+    floatx: right;
+    width: 93%;
+}
+
+.btn-refresh{
+    float: right;
+    margin-top: 5px;   
+}
+
+label {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.txt-query {
+    margin-inline: 20px;
+    width: 35em;
+    background-color:linen;
+}
+
+.error-row{
+    background-color: rgb(255, 155, 155);
+}

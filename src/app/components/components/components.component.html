@@ -1,0 +1,53 @@
+<div id="components" class="draggable">
+
+    <div class="header-div">
+        <p>{{title}}</p>
+    </div>
+
+    <div class="button-div">
+        <label>Name: &nbsp;</label><input #query class="txt-query" type="text" value="CONTROL"/>  
+        <button class="btn-refresh" (click)="search(query.value); xpand()">Search</button> 
+    </div>
+
+    <div>
+        <mat-accordion class="acs-component">
+            <mat-expansion-panel #mep="matExpansionPanel" [(expanded)]="xpandStatus" hideTovggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Components:
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        defined in the TMCDB
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <!-- insert content below...-->
+
+                <div class="content-div">
+                    <table class='acs-table'>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let comp of components" >
+                                <td>{{comp.name}}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <!-- insert content above...-->
+
+            </mat-expansion-panel>
+        </mat-accordion>
+        <div class="component-arrows-div">
+            <img class="downArrow" src="assets/icons/gnome/go-down.png" />
+            <img class="upArrow" src="assets/icons/gnome/go-up.png" />
+            <img class="rightArrow" src="assets/icons/gnome/go-next.png" />
+        </div>
+
+    </div>
+</div>
