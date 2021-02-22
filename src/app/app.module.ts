@@ -17,6 +17,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatExpansionModule} from '@angular/material/expansion';
 import {  MatMenuModule } from "@angular/material/menu";
 import {  MatDividerModule } from "@angular/material/divider";
+import { ComponentsComponent } from './components/components/components.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {  MatDividerModule } from "@angular/material/divider";
     AcsStatusComponent,
     ContainersComponent,
     SubsystemsComponent,
-    TasksComponent
+    TasksComponent,
+    ComponentsComponent
   ],
   imports: [
     BrowserModule,
