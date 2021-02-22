@@ -1,6 +1,7 @@
 import { SubsystemsService } from './subsystems.service';
 import { Component, OnInit } from '@angular/core';
 import { SubsystemWrapper } from './isubsystem';
+import { Constants } from 'src/app/constants';
 
 @Component({
   selector: 'app-subsystems',
@@ -18,8 +19,11 @@ export class SubsystemsComponent implements OnInit {
   }
 
   fetch() {
-    //this.fetchSubsystems();    
-    this.fetchMockSubsystems()
+    if (Constants.useMockData){
+      this.fetchMockSubsystems()
+    } else {
+      this.fetchSubsystems(); 
+    }  
   }
 
   fetchSubsystems() {

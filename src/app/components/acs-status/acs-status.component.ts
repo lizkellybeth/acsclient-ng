@@ -4,42 +4,49 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AcsStatusService } from './acs-status.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { IStatus } from './istatus';
+import { Constants } from 'src/app/constants';
 
 @Component({
   selector: 'app-acs-status',
   templateUrl: './acs-status.component.html',
   styleUrls: ['./acs-status.component.css']
 })
-export class AcsStatusComponent implements OnInit, AfterViewInit {
+export class AcsStatusComponent implements OnInit {
 
   panelOpenState = false;
   public status: any= "foo";
 
-  constructor(public service: AcsStatusService) { 
-
-  }
+  constructor(public service: AcsStatusService) {}
 
   ngOnInit(): void {
-    //this.fetchStatus();
-    this.fetchMockStatus();
+    this.fetch();
   }
 
-  ngAfterViewInit(){
+  fetch(){
+    if (Constants.useMockData){
+      this.fetchMockStatus();
+    } else {
+      this.fetchStatus();
+    }
   }
 
   startAcs(){
     console.log("Start ACS");
+    if (!Constants.useMockData){
     this.fetchStartAcs();
+    }
   }
 
   stopAcs(){
     console.log("Stop ACS");
-    this.fetchStopAcs();
+    if (!Constants.useMockData){
+      this.fetchStopAcs();
+    }
   }
 
   refreshAcs(){
     console.log("Refresh ACS");
-    this.fetchStatus();
+    this.fetch();
   }
 
  fetchStatus() {

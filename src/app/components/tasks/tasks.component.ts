@@ -1,6 +1,7 @@
 import { TasksService } from './tasks.service';
 import { Component, OnInit } from '@angular/core';
 import { ITask } from './itasks';
+import { Constants } from 'src/app/constants';
 
 @Component({
   selector: 'app-tasks',
@@ -18,8 +19,11 @@ export class TasksComponent implements OnInit {
   }
 
   fetch(){
-    //this.fetchTasks();
-    this.fetchMockTasks();
+    if (Constants.useMockData){
+      this.fetchMockTasks();
+    } else {
+      this.fetchTasks();
+    }
   }
 
   refreshTasks(){

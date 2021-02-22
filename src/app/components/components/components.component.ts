@@ -3,6 +3,7 @@ import { ComponentsService } from './components.service';
 import { Component, OnInit } from '@angular/core';
 import { ITask } from '../tasks/itasks';
 import { IComponent } from './icomponent';
+import { Constants } from 'src/app/constants';
 
 @Component({
   selector: 'app-components',
@@ -21,8 +22,11 @@ export class ComponentsComponent implements OnInit {
   }
 
   search(query:string){
-    //return this.searchComponents(query);
-    return this.searchMockComponents(query);
+    if (Constants.useMockData){
+      return this.searchMockComponents(query);
+    } else {
+      return this.searchComponents(query);
+    }
   }
 
   searchComponents(query:string) {

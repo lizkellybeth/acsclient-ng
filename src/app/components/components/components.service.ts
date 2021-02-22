@@ -1,18 +1,17 @@
 import { IComponent } from './icomponent';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Constants } from 'src/app/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ComponentsService {
 
-  readonly rootUrl = "http://rubyps:10021/acsclient";
-
-  constructor(private http: HttpClient) { }
+   constructor(private http: HttpClient) { }
 
   searchComponents(query:string): Promise<IComponent[]> {
-    return this.http.get<IComponent[]>(this.rootUrl + "/search-components?query=" + query + "*").toPromise();
+    return this.http.get<IComponent[]>(Constants.rootUrl + "/search-components?query=" + query + "*").toPromise();
   }
 
   searchMockComponents(){

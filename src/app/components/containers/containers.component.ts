@@ -2,6 +2,7 @@ import { MatSort } from '@angular/material/sort';
 import { IContainer } from './icontainer';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ContainersService } from 'src/app/components/containers/containers.service';
+import { Constants } from 'src/app/constants';
 
 @Component({
   selector: 'app-containers',
@@ -19,8 +20,11 @@ export class ContainersComponent implements OnInit {
   }
 
   fetch(){
-    //this.fetchContainers();
-    this.fetchMockContainers();
+    if (Constants.useMockData){
+      this.fetchMockContainers();
+    } else {
+      this.fetchContainers();
+    }
   }
 
   fetchContainers() {

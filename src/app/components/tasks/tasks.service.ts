@@ -1,6 +1,7 @@
 import { ITask } from './itasks';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Constants } from 'src/app/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +9,8 @@ import { Injectable } from '@angular/core';
 export class TasksService {
   constructor(private http: HttpClient) { }
 
-  readonly rootUrl = "http://rubyps:10021/acsclient";
-
   fetchTasks(): Promise<ITask[]> {
-    return this.http.get<ITask[]>(this.rootUrl + "/display-tasks").toPromise(); 
+    return this.http.get<ITask[]>(Constants.rootUrl + "/display-tasks").toPromise(); 
   }
 
   fetchMockTasks(): ITask[]{
