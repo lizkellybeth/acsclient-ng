@@ -15,13 +15,18 @@ export class ContainersComponent implements OnInit {
   constructor(public service: ContainersService) { }
 
   ngOnInit(): void {
-    this.fetchTmcdbConfig();
+    this.fetch();
   }
 
-  fetchTmcdbConfig() {
-    this.service.fetchTmcdbConfig()
+  fetch(){
+    //this.fetchContainers();
+    this.fetchMockContainers();
+  }
+
+  fetchContainers() {
+    this.service.fetchContainers()
     .then(res => {
-      //console.log("fetched result[]: " + JSON.stringify(res) );
+      //console.log("fetchTmcdbConfig fetched result[]: " + JSON.stringify(res) );
       let obj: IContainer[] = res;
       this.containers = obj;//JSON.stringify(res);
     })
@@ -29,10 +34,15 @@ export class ContainersComponent implements OnInit {
       console.error(err);
     });
   }
-  private _title = "Containers Component";
+  private _title = "Containers";
   public get title() {
     return this._title;
   }
 
+  fetchMockContainers(){
+    console.log("MOCK CONTAINERS OUTPUT!");
+    const res = this.service.fetchMockContainers();
+    this.containers = res;//JSON.stringify(res);
+  }
 
 }

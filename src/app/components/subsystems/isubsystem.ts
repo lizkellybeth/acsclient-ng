@@ -1,11 +1,17 @@
-export interface SubsystemWrapper {
+export interface MasterComponentWrapper {
     name: string;
-    master: ComponentWrapper;
-    components: ComponentWrapper[];
+    clazz: string;
 }
 
-export interface ComponentWrapper {
-    name: string;
-    idx: number;
-    master: boolean; 
+export interface MasterComponent {
+    MasterComponentWrapper: MasterComponentWrapper;
 }
+
+export interface SubsystemWrapper {
+    name: string;
+    clazz: string;
+    components: any[];
+    masterComponent: MasterComponent;
+}
+
+

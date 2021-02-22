@@ -1,4 +1,4 @@
-#acs-status .component-title {
+#acs-status span {
     background-color: rgba(95, 145, 158, 0.39);
     display: inline-block;
     width: 100%;

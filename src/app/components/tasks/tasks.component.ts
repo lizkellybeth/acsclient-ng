@@ -14,12 +14,17 @@ export class TasksComponent implements OnInit {
   constructor(public service: TasksService) { }
 
   ngOnInit(): void {
-    this.fetchTasks(); 
+    this.fetch(); 
+  }
+
+  fetch(){
+    //this.fetchTasks();
+    this.fetchMockTasks();
   }
 
   refreshTasks(){
     console.log("Refresh Tasks");
-    this.fetchTasks();
+    this.fetch();
   }
 
   fetchTasks() {
@@ -27,12 +32,6 @@ export class TasksComponent implements OnInit {
     .then(res => {
       //console.log("fetched tasks: " + JSON.stringify(res) ); 
       let obj: ITask[] = res;
-      /*
-      console.log("HERES A field: " + obj[0].name);
-      console.log("HERES A field: " + obj[0].parameters);
-      console.log("HERES A field: " + obj[0].id);
-      console.log("HERES A field: " + obj[0].complete);
-      */
       this.tasks = obj;//JSON.stringify(res);
     })
     .catch(err => {
@@ -40,7 +39,13 @@ export class TasksComponent implements OnInit {
     });
 }
 
-  private _title = "Tasks Component";
+fetchMockTasks() {
+  console.log("MOCK TASKS OUTPUT!");
+  const res = this.service.fetchMockTasks();
+  this.tasks = res;//JSON.stringify(res);  
+}
+
+private _title = "Tasks";
   public get title() {
     return this._title;
   }

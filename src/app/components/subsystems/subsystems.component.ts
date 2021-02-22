@@ -1,6 +1,6 @@
 import { SubsystemsService } from './subsystems.service';
 import { Component, OnInit } from '@angular/core';
-import { SubsystemWrapper, ComponentWrapper } from './isubsystem';
+import { SubsystemWrapper } from './isubsystem';
 
 @Component({
   selector: 'app-subsystems',
@@ -14,33 +14,38 @@ export class SubsystemsComponent implements OnInit {
   constructor(public service: SubsystemsService) { }
 
   ngOnInit(): void {
-    //this.fetchStatus();
-    this.fetchSubsystems();
+    this.fetch();
+  }
+
+  fetch() {
+    //this.fetchSubsystems();    
+    this.fetchMockSubsystems()
   }
 
   fetchSubsystems() {
     this.service.fetchSubsystems()
-    .then(res => {
-      console.log("fetched result[]: " + JSON.stringify(res) );
-      let subsystems: SubsystemWrapper[] = res;
-      let subsystem: SubsystemWrapper = subsystems[1];
-      let master: ComponentWrapper = subsystem["master"];
-      console.log("HERES A subname: " + subsystem.name);
-      console.log("HERES A mastername: " + master.name);
+      .then(res => {
+        console.log("fetched result[]: " + JSON.stringify(res));
+        let subsystems: SubsystemWrapper[] = res;
+        this.subsystems = subsystems;//JSON.stringify(res);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
 
-      this.subsystems = subsystems;//JSON.stringify(res);
-     })
-    .catch(err => {
-      console.error(err);
-    });
-}
+  fetchMockSubsystems() {
+    console.log("MOCK SUBSYSTEMS OUTPUT!");
+    const res = this.service.fetchMockSubsystems();
+    this.subsystems = res;//JSON.stringify(res);  
+  }
 
-  private _title = "ACS Subsystems Component";
+  private _title = "Subsystems";
   public get title() {
     return this._title;
   }
 
-  
-  }
+
+}
 
 

@@ -20,8 +20,8 @@ export class AcsStatusComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.fetchStatus();
-    //this.fetchMockStatus();
+    //this.fetchStatus();
+    this.fetchMockStatus();
   }
 
   ngAfterViewInit(){
@@ -41,14 +41,6 @@ export class AcsStatusComponent implements OnInit, AfterViewInit {
     console.log("Refresh ACS");
     this.fetchStatus();
   }
-
-  goDown(){
-    console.log("click down");
-    
-  }
-
-
-
 
  fetchStatus() {
     this.service.fetchAcsStatus()
@@ -83,12 +75,13 @@ export class AcsStatusComponent implements OnInit, AfterViewInit {
 
   }
 
-  private _title = "ACS Status Component";
+  private _title = "ACS Status";
   public get title() {
     return this._title;
   }
 
   fetchMockStatus(){
+    console.log("MOCK STATUS OUTPUT!");
     this.status = this.service.fetchMockStatus();
   }
 
