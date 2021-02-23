@@ -17,10 +17,21 @@
                 </mat-expansion-panel-header>
                 <!-- insert content below...-->
 
-                <div class="content-div">
-                    <div *ngFor="let subsystem of subsystems">
-                        {{subsystem.name}} <br>
-                    </div>
+                <div class=content-div>
+                    <table class='acs-table'>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Master Component</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let subsystem of subsystems">
+                                 <td>{{subsystem.name}}</td>
+                                 <td>{{subsystem.masterComponent.name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <!-- insert content above...-->
