@@ -31,15 +31,18 @@
 
 .button-div button.floatLt {
     float: left;
+    margin-left: 20px;
 }
 
 .button-div button.floatRt {
     float: right;
+    margin-right: 20px;
 }
 
 .button-div button.floatCtr {
     float:none;
     margin-inline: 26%;
+    margin-left: 29%;
     margin-bottom: 3px;
     margin-top: 3px;
 }
