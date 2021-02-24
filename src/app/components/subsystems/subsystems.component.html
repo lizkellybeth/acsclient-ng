@@ -4,6 +4,11 @@
         <p>{{title}}</p>
     </div>
 
+    <div class="button-div">
+        <button (click)="startSubsystems()">Start Subsystem</button>
+        <button (click)="stopSubsystems()" class="floatRt">Stop Subsystem</button>
+    </div>
+
     <div>
         <mat-accordion class="acs-component">
             <mat-expansion-panel hideToggle>
@@ -21,14 +26,22 @@
                     <table class='acs-table'>
                         <thead>
                             <tr>
+                                <th class="cbox"></th>
                                 <th>Name</th>
                                 <th>Master Component</th>
+                                <th>Components</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let subsystem of subsystems">
-                                 <td>{{subsystem.name}}</td>
-                                 <td>{{subsystem.masterComponent.name}}</td>
+                                <td><input type="checkbox" (change)="checkSubsystem($event, subsystem)"></td>
+                                <td>{{subsystem.name}}</td>
+                                <td>{{subsystem.masterComponent}}</td>
+                                <td>
+                                    <span *ngFor="let comp of subsystem.componentNames">
+                                        {{comp}}<br>
+                                    </span>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

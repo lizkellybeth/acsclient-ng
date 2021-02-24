@@ -2,7 +2,7 @@ import { element } from 'protractor';
 import { ComponentsService } from './components.service';
 import { Component, OnInit } from '@angular/core';
 import { ITask } from '../tasks/itasks';
-import { IComponent } from './icomponent';
+import { ComponentWrapper } from './icomponent';
 import { Constants } from 'src/app/constants';
 
 @Component({
@@ -12,7 +12,7 @@ import { Constants } from 'src/app/constants';
 })
 export class ComponentsComponent implements OnInit {
 
-  components: IComponent[] = [];
+  components: ComponentWrapper[] = [];
   xpandStatus=false;
 
   constructor(private service:ComponentsService) { }
@@ -33,7 +33,7 @@ export class ComponentsComponent implements OnInit {
     this.service.searchComponents(query)
     .then(res => {
       //console.log("fetched tasks: " + JSON.stringify(res) ); 
-      let obj: IComponent[] = res;
+      let obj: ComponentWrapper[] = res;
       this.components = obj;//JSON.stringify(res);
     })
     .catch(err => {

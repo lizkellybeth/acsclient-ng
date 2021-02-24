@@ -15,19 +15,31 @@
 }
 
 .button-div button {
-    margin-inline: 20px;
-    margin-top: 10px;   
+    margin-top: 7px;   
+    margin-inline: 10px;
 }
 
-.btn-refresh{
-    float: right;
-}
 
 .mat-expansion-panel-body *{
     font-size: 10px;
 }
   
-  #status-pre {
+#status-pre {
     width: 100%;
     overflow: auto;
+}
+
+.button-div button.floatLt {
+    float: left;
+}
+
+.button-div button.floatRt {
+    float: right;
+}
+
+.button-div button.floatCtr {
+    float:none;
+    margin-inline: 26%;
+    margin-bottom: 3px;
+    margin-top: 3px;
 }

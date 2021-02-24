@@ -3,6 +3,10 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; }
 
+tr {
+  vertical-align: top;
+}
+
 #menuDiv{
   width: 96%;
   margin-left: 10px;
@@ -21,6 +25,7 @@ body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; }
 .content-div {
   max-height: 100%;
   overflow-x: scroll;
+  font-size: 10px;
 }
 
 #div-left{

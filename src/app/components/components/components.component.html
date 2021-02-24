@@ -27,12 +27,13 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
+                                <th>Type</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let comp of components" >
-                                <td>{{comp.name}}</td>
-
+                                <td>{{comp.name}} </td>
+                                <td>{{comp.type}} </td>
                             </tr>
                         </tbody>
                     </table>

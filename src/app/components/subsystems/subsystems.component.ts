@@ -1,5 +1,6 @@
+import { element } from 'protractor';
 import { SubsystemsService } from './subsystems.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { SubsystemWrapper } from './isubsystem';
 import { Constants } from 'src/app/constants';
 
@@ -11,6 +12,7 @@ import { Constants } from 'src/app/constants';
 export class SubsystemsComponent implements OnInit {
 
   subsystems: SubsystemWrapper[] = [];
+  msg: string = "";
 
   constructor(public service: SubsystemsService) { }
 
@@ -18,12 +20,43 @@ export class SubsystemsComponent implements OnInit {
     this.fetch();
   }
 
+  checkSubsystem(event: any, subsystem: SubsystemWrapper) {
+    console.log(event.target.checked + ": " + subsystem.name);
+    const checked = event.target.checked;
+    subsystem.selected = checked;
+  }
+
+  startSubsystems() {
+    console.log("startSubsystem()----");
+    this.service.startSubsystems(this.subsystems)
+      .then(res => {
+        console.log("startSubsystems result: " + (res));
+      })
+      .catch(err => {
+        this.msg = err;
+        console.error(this.msg);
+      });
+
+  }
+
+  stopSubsystems() {
+    console.log("----stopSubsystem()");
+    this.service.stopSubsystems(this.subsystems)
+      .then(res => {
+        console.log("stopSubsystems result: " + (res));
+      })
+      .catch(err => {
+        this.msg = err;
+        console.error(this.msg);
+      });
+  }
+
   fetch() {
-    if (Constants.useMockData){
+    if (Constants.useMockData) {
       this.fetchMockSubsystems()
     } else {
-      this.fetchSubsystems(); 
-    }  
+      this.fetchSubsystems();
+    }
   }
 
   fetchSubsystems() {

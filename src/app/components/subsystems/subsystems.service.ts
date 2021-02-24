@@ -2,6 +2,7 @@ import { SubsystemWrapper } from './isubsystem';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Constants } from 'src/app/constants';
+import { query } from '@angular/animations';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,42 @@ export class SubsystemsService {
   }
 
   fetchMockSubsystems(): SubsystemWrapper[] {
-    const data =  [{"name":"SCHEDULING","clazz":"alma.exec.Subsystem","components":[],"masterComponent":{"MasterComponentWrapper":{"name":"SCHEDULING_MASTER_COMP","clazz":"alma.exec.Master"}}},{"name":"CONTROL","clazz":"alma.exec.Subsystem","components":[],"masterComponent":{"MasterComponentWrapper":{"name":"CONTROL_MASTER_COMP","clazz":"alma.exec.Master"}}}];
+    const data =
+      [
+        {
+          "name": "SCHEDULING",
+          "masterComponent": "SCHEDULING_MASTER_COMP",
+          "componentNames": [
+            "CONTROL/ACC/javaContainer"
+          ]
+        },
+        {
+          "name": "CONTROL",
+          "masterComponent": "CONTROL_MASTER_COMP",
+          "componentNames": [
+            "CONTROL/ACC/javaContainer"
+          ]
+        }
+      ]
     return data as SubsystemWrapper[];
   }
 
+  startSubsystems(subsystems: SubsystemWrapper[]): Promise<string> {
+    var querystring = "?";
+    subsystems.forEach((subsystem) => {
+      querystring += subsystem.name + "~";
+    })
+    console.log("querystring: " + querystring);
+    return this.http.get<string>(Constants.rootUrl + "/start-subsystems" + querystring).toPromise();
+  }
 
+  stopSubsystems(subsystems: SubsystemWrapper[]) {
+    var querystring = "?";
+    subsystems.forEach((subsystem) => {
+      querystring += subsystem.name + "~";
+    })
+    console.log("querystring: " + querystring);
+    return this.http.get<string>(Constants.rootUrl + "/stop-subsystems" + querystring).toPromise();
+  }
 
 }
