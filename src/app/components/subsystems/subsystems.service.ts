@@ -40,16 +40,16 @@ export class SubsystemsService {
     var querystring = "?";
     subsystems.forEach((subsystem) => {
       querystring += subsystem.name + "~";
-    })
+    });
     console.log("querystring: " + querystring);
     return this.http.get<string>(Constants.rootUrl + "/start-subsystems" + querystring).toPromise();
   }
 
-  stopSubsystems(subsystems: SubsystemWrapper[]) {
+  stopSubsystems(subsystems: SubsystemWrapper[]) { 
     var querystring = "?";
     subsystems.forEach((subsystem) => {
       querystring += subsystem.name + "~";
-    })
+    });
     console.log("querystring: " + querystring);
     return this.http.get<string>(Constants.rootUrl + "/stop-subsystems" + querystring).toPromise();
   }

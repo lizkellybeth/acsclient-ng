@@ -19,7 +19,6 @@
                     <table class='acs-table'>
                         <thead>
                             <tr>
-                                <th>&nbsp;</th>
                                 <th>ID</th>
                                 <th>Computer</th>
                                 <th>Container Name</th>
@@ -29,7 +28,6 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let container of containers">
-                                <td><input type="checkbox"></td>
                                 <td>{{container.containerId}}</td>
                                 <td>{{container.computer}}</td>
                                 <td>{{container.containerName}}</td>
