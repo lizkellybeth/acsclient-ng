@@ -1,7 +1,7 @@
 export interface SubsystemWrapper {
     name: string;
     masterComponent: string;
-    componentNames: string[];
+    components: string[];
     selected: boolean;
 }
 

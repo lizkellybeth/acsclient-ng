@@ -21,14 +21,14 @@ export class SubsystemsService {
         {
           "name": "SCHEDULING",
           "masterComponent": "SCHEDULING_MASTER_COMP",
-          "componentNames": [
+          "components": [
             "CONTROL/ACC/javaContainer"
           ]
         },
         {
           "name": "CONTROL",
           "masterComponent": "CONTROL_MASTER_COMP",
-          "componentNames": [
+          "components": [
             "CONTROL/ACC/javaContainer"
           ]
         }
@@ -37,7 +37,7 @@ export class SubsystemsService {
   }
 
   startSubsystems(subsystems: SubsystemWrapper[]): Promise<string> {
-    var querystring = "?";
+    var querystring = "?subsystems=";
     subsystems.forEach((subsystem) => {
       querystring += subsystem.name + "~";
     });
@@ -46,7 +46,7 @@ export class SubsystemsService {
   }
 
   stopSubsystems(subsystems: SubsystemWrapper[]) { 
-    var querystring = "?";
+    var querystring = "?subsystems=";
     subsystems.forEach((subsystem) => {
       querystring += subsystem.name + "~";
     });

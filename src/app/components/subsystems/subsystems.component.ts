@@ -28,7 +28,13 @@ export class SubsystemsComponent implements OnInit {
 
   startSubsystems() {
     console.log("startSubsystem()----");
-    this.service.startSubsystems(this.subsystems)
+    var subs:SubsystemWrapper[]  = [];
+    this.subsystems.forEach( (sub)  => {
+      if (sub.selected){
+        subs.push(sub);
+      }
+    });
+    this.service.startSubsystems(subs)
       .then(res => {
         console.log("startSubsystems result: " + (res));
       })
@@ -41,7 +47,13 @@ export class SubsystemsComponent implements OnInit {
 
   stopSubsystems() {
     console.log("----stopSubsystem()");
-    this.service.stopSubsystems(this.subsystems)
+    var subs:SubsystemWrapper[]  = [];
+    this.subsystems.forEach( (sub)  => {
+      if (sub.selected){
+        subs.push(sub);
+      }
+    });
+    this.service.stopSubsystems(subs)
       .then(res => {
         console.log("stopSubsystems result: " + (res));
       })
