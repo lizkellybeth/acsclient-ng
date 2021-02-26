@@ -19,11 +19,7 @@ export class TasksComponent implements OnInit {
   }
 
   fetch(){
-    if (Constants.useMockData){
-      this.fetchMockTasks();
-    } else {
-      this.fetchTasks();
-    }
+    this.fetchTasks();
   }
 
   refreshTasks(){
@@ -43,11 +39,6 @@ export class TasksComponent implements OnInit {
     });
 }
 
-fetchMockTasks() {
-  console.log("MOCK TASKS OUTPUT!");
-  const res = this.service.fetchMockTasks();
-  this.tasks = res;//JSON.stringify(res);  
-}
 
 private _title = "Tasks";
   public get title() {

@@ -23,25 +23,17 @@ export class AcsStatusComponent implements OnInit {
   }
 
   fetch(){
-    if (Constants.useMockData){
-      this.fetchMockStatus();
-    } else {
-      this.fetchStatus();
-    }
+    this.fetchStatus();
   }
 
   startAcs(){
     console.log("Start ACS");
-    if (!Constants.useMockData){
     this.fetchStartAcs();
-    }
   }
 
   stopAcs(){
     console.log("Stop ACS");
-    if (!Constants.useMockData){
-      this.fetchStopAcs();
-    }
+    this.fetchStopAcs();
   }
 
   refreshAcs(){
@@ -87,10 +79,6 @@ export class AcsStatusComponent implements OnInit {
     return this._title;
   }
 
-  fetchMockStatus(){
-    console.log("MOCK STATUS OUTPUT!");
-    this.status = this.service.fetchMockStatus();
-  }
 
   public getStatus(): string {
     return this.status;

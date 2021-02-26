@@ -22,11 +22,7 @@ export class ComponentsComponent implements OnInit {
   }
 
   search(query:string){
-    if (Constants.useMockData){
-      return this.searchMockComponents(query);
-    } else {
-      return this.searchComponents(query);
-    }
+    return this.searchComponents(query);
   }
 
   searchComponents(query:string) {
@@ -39,12 +35,6 @@ export class ComponentsComponent implements OnInit {
     .catch(err => {
       console.error(err);
     });
-  }
-
-  searchMockComponents(query:string) {
-    console.log("MOCK COMPONENTS OUTPUT!");
-    const res = this.service.searchMockComponents();
-    this.components = res;//JSON.stringify(res);
   }
 
   xpand(){

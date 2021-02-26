@@ -64,11 +64,7 @@ export class SubsystemsComponent implements OnInit {
   }
 
   fetch() {
-    if (Constants.useMockData) {
-      this.fetchMockSubsystems()
-    } else {
-      this.fetchSubsystems();
-    }
+    this.fetchSubsystems();
   }
 
   fetchSubsystems() {

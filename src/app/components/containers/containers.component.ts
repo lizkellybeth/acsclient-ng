@@ -20,11 +20,7 @@ export class ContainersComponent implements OnInit {
   }
 
   fetch(){
-    if (Constants.useMockData){
-      this.fetchMockContainers();
-    } else {
-      this.fetchContainers();
-    }
+    this.fetchContainers();
   }
 
   fetchContainers() {
@@ -43,10 +39,5 @@ export class ContainersComponent implements OnInit {
     return this._title;
   }
 
-  fetchMockContainers(){
-    console.log("MOCK CONTAINERS OUTPUT!");
-    const res = this.service.fetchMockContainers();
-    this.containers = res;//JSON.stringify(res);
-  }
 
 }
