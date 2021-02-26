@@ -79,11 +79,6 @@ export class SubsystemsComponent implements OnInit {
       });
   }
 
-  fetchMockSubsystems() {
-    console.log("MOCK SUBSYSTEMS OUTPUT!");
-    const res = this.service.fetchMockSubsystems();
-    this.subsystems = res;//JSON.stringify(res);  
-  }
 
   private _title = "Subsystems";
   public get title() {

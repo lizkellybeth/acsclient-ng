@@ -15,27 +15,6 @@ export class SubsystemsService {
     return this.http.get<SubsystemWrapper[]>(Constants.rootUrl + "/display-subsystems").toPromise();
   }
 
-  fetchMockSubsystems(): SubsystemWrapper[] {
-    const data =
-      [
-        {
-          "name": "SCHEDULING",
-          "masterComponent": "SCHEDULING_MASTER_COMP",
-          "components": [
-            "CONTROL/ACC/javaContainer"
-          ]
-        },
-        {
-          "name": "CONTROL",
-          "masterComponent": "CONTROL_MASTER_COMP",
-          "components": [
-            "CONTROL/ACC/javaContainer"
-          ]
-        }
-      ]
-    return data as SubsystemWrapper[];
-  }
-
   startSubsystems(subsystems: SubsystemWrapper[]): Promise<string> {
     var querystring = "?subsystems=";
     subsystems.forEach((subsystem) => {
